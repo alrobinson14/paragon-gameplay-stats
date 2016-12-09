@@ -1,0 +1,77 @@
+enum HERONAME{
+	CRUNCH,
+	COUNTESS,
+	KWANG,
+	LTBELICA,
+	NARBASH,
+	THEFEY,
+	GREYSTONE,
+	KHAIMERA,
+	RIKTOR,
+	GRIMEXE,
+	IGGYSCORCH,
+	SEVAROG,
+	HOWITZER,
+	STEEL,
+	GADGET,
+	TWINBLAST,
+	RAMPAGE,
+	DEKKER,
+	KALLARI,
+	GIDEON,
+	MURDOCK,
+	FENGMAO,
+	MURIEL,
+	SPARROW,
+	GRUX	
+}
+
+enum ROLE{
+	FIGHTER,
+	ASSASSIN,
+	CASTER,
+	TANK,
+	SUPPORT,
+	RANGER
+}
+
+enum AFFINITY{
+	UNIVERSAL,
+	FURY,
+	INTELLIGENCE,
+	GROWTH,
+	CORRUPTION,
+	ORDER,
+}
+
+enum UPGRADE{	
+	HEALTH(50),
+	HEALTH_REGEN(1.4),
+	MANA(75),
+	MANA_REGEN(0.3),
+	BASIC_RESIST(22),
+	ABILITY_RESIST(22),
+	COOLDOWN(.025),
+	LIFESTEAL(.05),
+	POWER(6),
+	ATTACK_SPEED(5.5),
+	CRIT_CHANCE(.03),
+	ENERGY_PEN(16),
+	PHYSICAL_PEN(16),
+	CRIT_BONUS(.5);
+	
+	private double value;
+	
+	UPGRADE(double value){this.value = value;}
+	
+	public double getUpgradeValue(){return value;}
+	
+}
+
+enum ATTACK{
+	LC,
+	Q,
+	E,
+	R,
+	RC
+}
