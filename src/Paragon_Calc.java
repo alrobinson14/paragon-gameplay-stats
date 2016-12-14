@@ -25,24 +25,53 @@ class main{
 	}
 	
 	public void doStuff(){
+		
+		UpgradeCard minorStrike = new UpgradeCard(UPGRADE.POWER);
+			minorStrike.setName("Minor Strike");
+			minorStrike.setAffinity(AFFINITY.UNIVERSAL);
+			minorStrike.setCost(1);
+			
+		UpgradeCard strike = new UpgradeCard(UPGRADE.POWER);
+			minorStrike.setName("Strike");
+			minorStrike.setAffinity(AFFINITY.UNIVERSAL);
+			minorStrike.setCost(2);
+			
+		UpgradeCard majorStrike = new UpgradeCard(UPGRADE.POWER);
+			minorStrike.setName("Major Strike");
+			minorStrike.setAffinity(AFFINITY.UNIVERSAL);
+			minorStrike.setCost(3);
+			
+		EquipmentCard spikedBoneplate = new EquipmentCard(true);
+			spikedBoneplate.setName("Spiked Boneplate");
+			spikedBoneplate.setAffinity(AFFINITY.GROWTH);
+			spikedBoneplate.setCost(3);
+			spikedBoneplate.addUpgradeCard(minorStrike);
+			spikedBoneplate.addUpgradeCard(strike);
+			spikedBoneplate.addUpgradeCard(majorStrike);
+			
+			
+		
+		
+		
+		//Instantiate Hero object;
+		//Print Hero statistics
 
-		
-		CardReader cr = new CardReader();
-		Card[] myCards = cr.loadCards();
-		
-		
-		
-		for (int n = 0; n<1000; n++)
-		{
-			System.out.println(myCards[n].getName()+" "+myCards[n].getCost()+" "+myCards[n].getAffinity()+" "+((EquipmentCard) myCards[n]).getFillBonus()[0]);
-		}
+
+		//Instantiate Deck object;
+
+
+		//Populate Deck with Card objects;
+			//Print Card statistics
+
+
+		//Print Deck statistics
+		//Print Hero statistics updated by Deck
 	}
 	
 	/*
 	 * This function calcualtes raw damage a Hero will be able to do to an enemy
 	 */
 	
-	/*
 	public double getRawDamage (Hero hero, EquipmentCard[] hand, ATTACK attack)
 	{
 		double rawDmg    = 0;
@@ -88,13 +117,12 @@ class main{
 	
 	
 		}
-	
 		
 		//TODO: Once the numbers are collected, we can calculate raw damage
 		//rawDamage = baseDmg + (bonusDmg + scaling)
 		return rawDmg;
 	}
-		*/
+	
 	
 	/*
 	 * This function will calculate effective damage done to a Hero

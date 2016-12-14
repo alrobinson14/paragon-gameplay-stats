@@ -26,13 +26,15 @@ public class Card{
 class EquipmentCard extends Card{
 	// Ignore actual active bonuses but keep in mind only 4 active cards may be placed in a hand
 	private boolean active;
+	private boolean filled;
 	// Not all cards are slotted
 	// Not all cards which are slotted, provide bonuses
 	private boolean slotted;
 	
 	// The size of this array will range between 1-3 (or 4)
 	private UPGRADE[] passives;
-	private UpgradeCard[] slots;
+	private UpgradeCard[] upgrades;
+	private int numUpgrades;
 	
 	private UPGRADE[] fillBonus;
 	
@@ -42,19 +44,10 @@ class EquipmentCard extends Card{
 	 *  There are currently about 300 cards in the game with more to come (including UpgradeCards)
 	 */
 	
-	public EquipmentCard(String name, int cost, AFFINITY affinity, boolean active, boolean slotted, UPGRADE[] passives, UPGRADE[] fillBonus)
+	public EquipmentCard(boolean slotted)
 	{
-		super.setName(name);
-		super.setCost(cost);
-		super.setAffinity(affinity);
-		
-		this.active = active;
-		this.slotted = slotted;		
 		if (slotted)
-			slots = new UpgradeCard[3];
-	
-		this.passives = passives;
-		this.fillBonus = fillBonus;
+			passives = new UPGRADE[3];
 	}
 	
 	/*
@@ -64,7 +57,6 @@ class EquipmentCard extends Card{
 	 *  Return 2 if card is slotted, but full
 	 *  Return 3 if upgrade card does not match equipment card upgrade
 	 */
-	/*
 	public int addUpgradeCard(UpgradeCard upgradeCard)
 	{
 		if (!slotted)
@@ -87,7 +79,6 @@ class EquipmentCard extends Card{
 		return 0;			
 	}
 
-
 	public UpgradeCard[] getUpgrades() {
 		return upgrades;
 	}
@@ -103,7 +94,7 @@ class EquipmentCard extends Card{
 	public void setNumUpgrades(int numUpgrades) {
 		this.numUpgrades = numUpgrades;
 	}
-		*/
+
 	public UPGRADE[] getFillBonus() {
 		return fillBonus;
 	}
@@ -112,7 +103,7 @@ class EquipmentCard extends Card{
 		this.fillBonus = fillBonus;
 	}
 
-
+	
 
 }
 
@@ -123,15 +114,11 @@ class EquipmentCard extends Card{
  * CSV will maintain consistency with other cards
  * However, Upgrade cards are much more simplistic in their efficiency being a 1:1 output(pt:value)
  */
-class UpgradeCard extends Card
-{
+class UpgradeCard extends Card{
 	private UPGRADE upgrade;
 	
-	UpgradeCard(String name, int cost, AFFINITY affinity, UPGRADE upgrade)
+	UpgradeCard(UPGRADE upgrade)
 	{
-		super.setName(name);
-		super.setCost(cost);
-		super.setAffinity(affinity);
 		this.upgrade = upgrade;
 	}
 	

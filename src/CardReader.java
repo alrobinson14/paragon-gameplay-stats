@@ -7,74 +7,56 @@ import java.util.ArrayList;
 
 public class CardReader 
 {
-	public Card[] loadCards() 
+	public static void main(String[] args) 
 	{
-		Card[] allCards = new Card[300];
-		int cardCount = 0;
+		Card[] allCards;
 		
 		BufferedReader cardReader = null;
 		
 		try 
 		{
 
-			String currLine;
-			cardReader = new BufferedReader(new FileReader("C:\\Temp\\Upgrades.csv"));
+			String card;
+			cardReader = new BufferedReader(new FileReader("location of file goes here"));
 			
-			// Eats first line nom nom nom
-			cardReader.readLine();
-			/*
-			while ((currLine = cardReader.readLine()) != null) 
-			{				
-				String[] splitData = currLine.split(",");
-				allCards[cardCount] = new UpgradeCard(splitData[0], Integer.parseInt((splitData[1])), AFFINITY.valueOf(splitData[2]), UPGRADE.valueOf(splitData[3]));
+			// How to read file in java line by line?
+			while ((card = cardReader.readLine()) != null) 
+			{
+				String[] splitData = card.split(",");
 				
-				cardCount++;
-				//System.out.println("Raw CSV data: " + allCards[cardCount] + "\n");
-			}
-			*/
-			
-			cardReader.close();
-			
-			
-			cardReader = new BufferedReader(new FileReader("C:\\Temp\\Equipment.csv"));
-			
-			// Eats first line nom nom nom
-			cardReader.readLine();
-			
-			while ((currLine = cardReader.readLine()) != null) 
-			{				
-				String[] splitData = currLine.split(",");
+				//TODO: Instead of a generic card, we are going to have Equipment cards and Upgrade cards
+				/* if ("E".equals(splitData[0]))
+						EquipmentCard card = new EquipmentCard();
+				else if ("U".equals(splitData[0]))
+					UpgradeCard card = new UpgradeCard(); */
 				
-				//determine size of passivesArray
-				int passiveCount = 0;
-				if (splitData[5].equals("")) passiveCount = 0;
-				else if (splitData[6].equals("")) passiveCount = 1;
-				else if (splitData[7].equals("")) passiveCount = 2;
-				else if (splitData[8].equals("")) passiveCount = 3;
-				else passiveCount = 4;
+				card.setName(splitData[0]);
+				card.setCost(splitData[1]);
+				card.setAffinity(splitData[2]);
 				
-				UPGRADE[] passives = new UPGRADE[passiveCount];
-				for (int n=5, m=0; m<passiveCount; n++, m++)
+				// n = first upgrade
+				// splitData[3] should contain number of upgrades
+				
+				//TODO: we will need to include addUpgrade and addFillBonus into the card class
+				int passiveOffset = 5;
+				int numPassives = splitData[3];
+				for(int n=passiveOffset; n<passiveOffset+numPassives; n++)
 				{
-					passives[m] = UPGRADE.valueOf(splitData[n]);
+					card.addUpgrade(splitData[n]);
 				}
 				
-				int fillBonusCount = 0;
-				if (splitData[9].equals("")) fillBonusCount = 0;
-				else if (splitData[10].equals("")) fillBonusCount = 1;
-				else fillBonusCount = 2;
-
-				UPGRADE[] fillBonus = new UPGRADE[fillBonusCount];
-				for (int n=9, m=0; m<fillBonusCount; n++, m++)
+				int bonusOffset = passiveOffset+numPassives;
+				int numBonuses = splitData[4];
+				for(int n = bonusOffset; n<bonusOffset+numBonuses; n++)
 				{
-					fillBonus[m] = UPGRADE.valueOf(splitData[n]);
+					card.addFillBonus(splitData[n]);
 				}
 				
-				allCards[cardCount] = new EquipmentCard(splitData[0], Integer.parseInt((splitData[1])), AFFINITY.valueOf(splitData[2]), Boolean.valueOf(splitData[3]), Boolean.valueOf(splitData[4]), passives, fillBonus);	
+					
 				
-				cardCount++;
+				System.out.println("Raw CSV data: " + card);
 			}
-			cardReader.close();
+			
 		} 
 		catch (IOException e) 
 		{
@@ -94,8 +76,6 @@ public class CardReader
 				e.printStackTrace();
 			}
 		}
-		
-		return allCards;
 	}	
 }
 
