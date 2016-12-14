@@ -24,31 +24,31 @@ final class Tools{
 			myAffinities[1] = AFFINITY.CORRUPTION;
 			break;
 			case LTBELICA:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.ORDER;
 			break;
 			case NARBASH:
 			myAffinities[0] = AFFINITY.GROWTH;
-			myAffinities[1] = AFFINITY.INTELLIGENCE;
+			myAffinities[1] = AFFINITY.INTELLECT;
 			break;
 			case THEFEY:
 			myAffinities[0] = AFFINITY.GROWTH;
-			myAffinities[1] = AFFINITY.INTELLIGENCE;
+			myAffinities[1] = AFFINITY.INTELLECT;
 			break;
 			case GREYSTONE:
 			myAffinities[0] = AFFINITY.FURY;
-			myAffinities[1] = AFFINITY.INTELLIGENCE;
+			myAffinities[1] = AFFINITY.INTELLECT;
 			break;
 			case KHAIMERA:
 			myAffinities[0] = AFFINITY.GROWTH;
 			myAffinities[1] = AFFINITY.FURY;
 			break;
 			case RIKTOR:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.CORRUPTION;
 			break;
 			case GRIMEXE:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.CORRUPTION;
 			break;
 			case IGGYSCORCH:
@@ -61,14 +61,14 @@ final class Tools{
 			break;
 			case HOWITZER:
 			myAffinities[0] = AFFINITY.FURY;
-			myAffinities[1] = AFFINITY.INTELLIGENCE;
+			myAffinities[1] = AFFINITY.INTELLECT;
 			break;
 			case STEEL:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.ORDER;
 			break;
 			case GADGET:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.ORDER;
 			break;
 			case TWINBLAST:
@@ -84,16 +84,16 @@ final class Tools{
 			myAffinities[1] = AFFINITY.ORDER;
 			break;
 			case KALLARI:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.CORRUPTION;
 			break;
 			case GIDEON:
-			myAffinities[0] = AFFINITY.INTELLIGENCE;
+			myAffinities[0] = AFFINITY.INTELLECT;
 			myAffinities[1] = AFFINITY.CORRUPTION;
 			break;
 			case MURDOCK:
 			myAffinities[0] = AFFINITY.FURY;
-			myAffinities[1] = AFFINITY.INTELLIGENCE;
+			myAffinities[1] = AFFINITY.INTELLECT;
 			break;
 			case FENGMAO:
 			myAffinities[0] = AFFINITY.FURY;
