@@ -1,7 +1,8 @@
 /*
  * The Card class templates what a card is and where it can be used
  */
-public class Card{
+public class Card
+{
 	private String name;
 	private int cost;
 	private AFFINITY affinity;
@@ -23,18 +24,22 @@ public class Card{
  * Equipment cards can be active or passive
  * Some EquipmentCards provide bonuses when filled with 3 UpgradeCards
  */
-class EquipmentCard extends Card{
+class EquipmentCard extends Card
+{
 	// Ignore actual active bonuses but keep in mind only 4 active cards may be placed in a hand
 	private boolean active;
 	// Not all cards are slotted
 	// Not all cards which are slotted, provide bonuses
 	private boolean slotted;
 	
+	private boolean filled; //This says the Equipment card is completely filled with 3 upgrade cards.
 	// The size of this array will range between 1-3 (or 4)
 	private UPGRADE[] passives;
 	private UpgradeCard[] slots;
 	
 	private UPGRADE[] fillBonus;
+	
+	
 	
 	/*
 	 *  This prototype doesn't make much sense.  There are far too many cards in the game to do this manually
@@ -57,6 +62,11 @@ class EquipmentCard extends Card{
 		this.fillBonus = fillBonus;
 	}
 	
+	public UPGRADE[] getFillBonus() {return fillBonus;}
+
+	public void setFillBonus(UPGRADE[] fillBonus) {this.fillBonus = fillBonus;}
+
+	
 	/*
 	 *  Add upgradeCard to this equipment card
 	 *  Return 0 on success
@@ -64,14 +74,44 @@ class EquipmentCard extends Card{
 	 *  Return 2 if card is slotted, but full
 	 *  Return 3 if upgrade card does not match equipment card upgrade
 	 */
-	/*
+	
 	public int addUpgradeCard(UpgradeCard upgradeCard)
 	{
-		if (!slotted)
-			return 1;
 		
-		else if (filled)
+		// What upgrade card is this?
+		String name           = upgradeCard.getName();
+		int cost              = upgradeCard.getCost();
+		AFFINITY cardAffinity = upgradeCard.getAffinity();
+		UPGRADE stats         = upgradeCard.getUpgrade();
+		int numSlots          = 0;
+		
+		//Is the card full?
+		if(filled)
+		{
 			return 2;
+		}
+		
+		//Is this upgrade card allowed to be inside of this equipment card?
+		
+		
+		
+		
+		
+		//Is the equipment card slotted, and how many slots are filled?
+
+		
+		
+		//How many slots does the equipment card currently have?
+		
+		
+		
+		//Does this card deal with Fill Bonuses?
+		
+		
+		//Now we can add the Upgrade Card!
+		
+		
+/*
 		
 		//Get upgradecard value and compare against all values in passives
 		else if (false)
@@ -83,10 +123,15 @@ class EquipmentCard extends Card{
 		
 		if (numUpgrades >= 2)
 			filled = true;
+		*/
 		
+		//Flip the filled flag back 
+		
+		numSlots++;
 		return 0;			
 	}
 
+	/*
 
 	public UpgradeCard[] getUpgrades() {
 		return upgrades;
@@ -104,13 +149,6 @@ class EquipmentCard extends Card{
 		this.numUpgrades = numUpgrades;
 	}
 		*/
-	public UPGRADE[] getFillBonus() {
-		return fillBonus;
-	}
-
-	public void setFillBonus(UPGRADE[] fillBonus) {
-		this.fillBonus = fillBonus;
-	}
 
 
 

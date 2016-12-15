@@ -26,13 +26,13 @@ public class Hero{
 	
 	// Defensive Stats
 	private double health;
-	private double basic_resist;
-	private double ability_resist;
+	private double basicResist;
+	private double abilityResist;
 	
 	// Misc Stats
 	private double mana;
-	private double mana_regen;
-	private double health_regen;
+	private double manaRegen;
+	private double healthRegen;
 	
 
 	// TODO: Will also need addCard/removeCard/setActive/etc...
@@ -45,105 +45,55 @@ public class Hero{
 		cardScale = Tools.getHeroCardScale(role);		
 	}
 
-	public HERONAME getName() {
-		return name;
-	}
+	public HERONAME getName() {return name;}
 
-	public AFFINITY[] getAffinity() {
-		return affinity;
-	}
+	public AFFINITY[] getAffinity() {return affinity;}
 
-	public ROLE getRole() {
-		return role;
-	}
+	public ROLE getRole() {return role;}
 
-	public int getLevel() {
-		return level;
-	}
+	public int getLevel() {return level;}
 
-	public double getCardScale() {
-		return cardScale;
-	}
+	public double getCardScale() {return cardScale;}
 
-	public double getLc_BaseDmg() {
-		return lc_BaseDmg;
-	}
+	public double getLc_BaseDmg() {return lc_BaseDmg;}
 
-	public double getQ_BaseDmg() {
-		return q_BaseDmg;
-	}
+	public double getQ_BaseDmg() {return q_BaseDmg;}
 
-	public double getE_BaseDmg() {
-		return e_BaseDmg;
-	}
+	public double getE_BaseDmg() {return e_BaseDmg;}
 
-	public double getR_BaseDmg() {
-		return r_BaseDmg;
-	}
+	public double getR_BaseDmg() {return r_BaseDmg;}
 
-	public double getRc_BaseDmg() {
-		return rc_BaseDmg;
-	}
+	public double getRc_BaseDmg() {return rc_BaseDmg;}
 
-	public double getLc_Cooldown() {
-		return lc_Cooldown;
-	}
+	public double getLc_Cooldown() {return lc_Cooldown;}
 
-	public double getQ_Cooldown() {
-		return q_Cooldown;
-	}
+	public double getQ_Cooldown() {return q_Cooldown;}
 
-	public double getE_Cooldown() {
-		return e_Cooldown;
-	}
+	public double getE_Cooldown() {return e_Cooldown;}
 
-	public double getR_Cooldown() {
-		return r_Cooldown;
-	}
+	public double getR_Cooldown() {return r_Cooldown;}
 
-	public double getRc_Cooldown() {
-		return rc_Cooldown;
-	}
+	public double getRc_Cooldown() {return rc_Cooldown;}
 
-	public double getHealth() {
-		return health;
-	}
+	public double getHealth() {return health;}
 
-	public double getBasic_resist() {
-		return basic_resist;
-	}
+	public double getBasicResist() {return basicResist;}
 
-	public double getAbility_resist() {
-		return ability_resist;
-	}
+	public double getAbilityResist() {return abilityResist;}
 
-	public double getMana() {
-		return mana;
-	}
+	public double getMana() {return mana;}
 
-	public double getMana_regen() {
-		return mana_regen;
-	}
+	public double getMana_regen() {return manaRegen;}
 
-	public double getHealth_regen() {
-		return health_regen;
-	}
+	public double getHealth_regen() {return healthRegen;}
 
-	public Deck getDeck() {
-		return deck;
-	}
+	public Deck getDeck() {return deck;}
 
-	public void setDeck(Deck deck) {
-		this.deck = deck;
-	}
+	public void setDeck(Deck deck) {this.deck = deck;}
 
-	public Card[] getHand() {
-		return hand;
-	}
+	public Card[] getHand() {return hand;}
 
-	public void setHand(Card[] hand) {
-		this.hand = hand;
-	}
+	public void setHand(Card[] hand) {this.hand = hand;}
 
 	
 }

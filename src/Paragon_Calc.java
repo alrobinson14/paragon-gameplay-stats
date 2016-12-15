@@ -103,7 +103,7 @@ class main{
 	public double getEffectiveDamage (Hero hero, double rawDmg, double pen) //we will put our parameters in here
 	{
 
-		double armor = hero.getBasic_resist();
+		double armor = hero.getBasicResist();
 		int level = hero.getLevel();
 		
 		//TODO: Similar to getRawDamage, need to cycle thru Hero's hand to calculate bonus resistance
