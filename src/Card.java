@@ -31,13 +31,14 @@ class EquipmentCard extends Card
 	// Not all cards are slotted
 	// Not all cards which are slotted, provide bonuses
 	private boolean slotted;
-	private boolean filled; //This says the Equipment card is completely filled with 3 upgrade cards.
+	private boolean filled; //This says if the Equipment card is completely filled with 3 upgrade cards.
+	int numSlots = 0;
 	
 	private UPGRADE[] fillBonus;
 	private UPGRADE[] passives;
 	
 	
-	private UpgradeCard[] slots; //Ranges 0-2 in the array
+	private UpgradeCard[] slot; //How many upgrade cards do we have.
 
 	
 	
@@ -57,7 +58,7 @@ class EquipmentCard extends Card
 		this.active = active;
 		this.slotted = slotted;		
 		if (slotted)
-			slots = new UpgradeCard[3];
+			slot = new UpgradeCard[3];
 	
 		this.passives = passives;
 		this.fillBonus = fillBonus;
@@ -79,22 +80,15 @@ class EquipmentCard extends Card
 	public int addUpgradeCard(UpgradeCard upgradeCard)
 	{
 		
-		// What upgrade card is this?
-		String name           = upgradeCard.getName();
-		int cost              = upgradeCard.getCost();
-		AFFINITY cardAffinity = upgradeCard.getAffinity();
-		UPGRADE stats         = upgradeCard.getUpgrade();
-		int numSlots          = 0;
+		// What upgrade card is this? 
+		UPGRADE stats  = upgradeCard.getUpgrade();
 		
 		//Is the card full?
-		if(filled)
-		{
-			return 2;
-		}
-		
+
+	
 		//Is this upgrade card allowed to be inside of this equipment card?
 		
-		
+	
 		
 		
 		
@@ -110,30 +104,20 @@ class EquipmentCard extends Card
 		
 		
 		//Now we can add the Upgrade Card!
-		
-		
-/*
-		
-		//Get upgradecard value and compare against all values in passives
-		else if (false)
-			return 3;
-		
-		else
-		upgrades[numUpgrades] = upgradeCard;
-		numUpgrades++;
-		
-		if (numUpgrades >= 2)
-			filled = true;
-		*/
-		
-		//Flip the filled flag back 
-		
+		slot[numSlots] = upgradeCard;
 		numSlots++;
+		
+		// Now, is the Equipment card filled?
+		if (numSlots >= 2)
+		{
+			filled = true;
+		}
+
 		return 0;			
 	}
+}
 
-	/*
-
+/*
 	public UpgradeCard[] getUpgrades() {
 		return upgrades;
 	}
@@ -149,7 +133,7 @@ class EquipmentCard extends Card
 	public void setNumUpgrades(int numUpgrades) {
 		this.numUpgrades = numUpgrades;
 	}
-		*/
+		
 
 
 
