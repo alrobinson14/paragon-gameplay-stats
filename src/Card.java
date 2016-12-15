@@ -31,13 +31,14 @@ class EquipmentCard extends Card
 	// Not all cards are slotted
 	// Not all cards which are slotted, provide bonuses
 	private boolean slotted;
-	
 	private boolean filled; //This says the Equipment card is completely filled with 3 upgrade cards.
-	// The size of this array will range between 1-3 (or 4)
-	private UPGRADE[] passives;
-	private UpgradeCard[] slots;
 	
 	private UPGRADE[] fillBonus;
+	private UPGRADE[] passives;
+	
+	
+	private UpgradeCard[] slots; //Ranges 0-2 in the array
+
 	
 	
 	
