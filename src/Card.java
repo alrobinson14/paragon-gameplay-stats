@@ -32,13 +32,15 @@ class EquipmentCard extends Card
 	// Not all cards which are slotted, provide bonuses
 	private boolean slotted;
 	private boolean filled; //This says if the Equipment card is completely filled with 3 upgrade cards.
-	int numSlots = 0;
+
+
+	private int numOfUpgradeCards = 0;
 	
 	private UPGRADE[] fillBonus;
 	private UPGRADE[] passives;
 	
 	
-	private UpgradeCard[] slot; //How many upgrade cards do we have.
+	private UpgradeCard[] upgradeCards; //How many upgrade cards do we have.
 
 	
 	
@@ -58,85 +60,89 @@ class EquipmentCard extends Card
 		this.active = active;
 		this.slotted = slotted;		
 		if (slotted)
-			slot = new UpgradeCard[3];
+			upgradeCards = new UpgradeCard[3];
 	
 		this.passives = passives;
 		this.fillBonus = fillBonus;
 	}
 	
 	public UPGRADE[] getFillBonus() {return fillBonus;}
+	
+	public UPGRADE[] getPassives() {return passives;}
+	
+	public boolean isActive() {return active;}
 
-	public void setFillBonus(UPGRADE[] fillBonus) {this.fillBonus = fillBonus;}
-
+	public UPGRADE[] getUpgrades()
+	{
+		if(!slotted)
+			return null;
+		
+		if(numOfUpgradeCards == 0)
+			return null;
+		
+		int totalUpgradeValue = 0;
+		
+		for(int i=0; i < numOfUpgradeCards; i++)
+		{
+			totalUpgradeValue += upgradeCards[i].getCost();
+		}
+				
+		UPGRADE[] upgrades = new UPGRADE[totalUpgradeValue];
+				
+		for(int i=0; i < numOfUpgradeCards; i++)
+		{
+			for(int j=0; j < upgradeCards[j].getCost(); j++)
+			{
+				upgrades[i] = upgradeCards[i].getUpgrade();
+			}
+		}
+				
+		return upgrades;
+	}
 	
 	/*
 	 *  Add upgradeCard to this equipment card
 	 *  Return 0 on success
 	 *  Return 1 if card is not slotted
-	 *  Return 2 if card is slotted, but full
+	 *  Return 2 if card is full
 	 *  Return 3 if upgrade card does not match equipment card upgrade
 	 */
-	
-	public int addUpgradeCard(UpgradeCard upgradeCard)
+
+
+	public int addUpgradeCard(UpgradeCard currentUpgradeCard)
 	{
-		
-		// What upgrade card is this? 
-		UPGRADE stats  = upgradeCard.getUpgrade();
+		//Is the card slotted?
+		if (!slotted)
+			return 1;
+
 		
 		//Is the card full?
+		if (filled)
+			return 2; 
 
 	
 		//Is this upgrade card allowed to be inside of this equipment card?
-		
-	
-		
-		
-		
-		//Is the equipment card slotted, and how many slots are filled?
-
-		
-		
-		//How many slots does the equipment card currently have?
-		
-		
-		
-		//Does this card deal with Fill Bonuses?
-		
+		for(int i = 0; i < passives.length; i++)
+		{
+			//What stat does the card contain?
+			if(currentUpgradeCard.getUpgrade() == passives[i])
+				break;
+			
+			if(i == passives.length - 1)
+				return 3;
+			
+		}		
 		
 		//Now we can add the Upgrade Card!
-		slot[numSlots] = upgradeCard;
-		numSlots++;
+		upgradeCards[numOfUpgradeCards] = currentUpgradeCard;
+		numOfUpgradeCards++;
 		
 		// Now, is the Equipment card filled?
-		if (numSlots >= 2)
-		{
+		if (numOfUpgradeCards >= 2)
 			filled = true;
-		}
 
 		return 0;			
 	}
-}
-
-/*
-	public UpgradeCard[] getUpgrades() {
-		return upgrades;
-	}
-
-	public void setUpgrades(UpgradeCard[] upgrades) {
-		this.upgrades = upgrades;
-	}
-
-	public int getNumUpgrades() {
-		return numUpgrades;
-	}
-
-	public void setNumUpgrades(int numUpgrades) {
-		this.numUpgrades = numUpgrades;
-	}
-		
-
-
-
 }
 
 /*
