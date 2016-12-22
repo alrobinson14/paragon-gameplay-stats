@@ -46,7 +46,6 @@ class EquipmentCard extends Card
 	
 	
 	/*
-	 *  This prototype doesn't make much sense.  There are far too many cards in the game to do this manually
 	 *  These should be handled by reading a CSV which loads all cards into a class containing all cards.
 	 *  There are currently about 300 cards in the game with more to come (including UpgradeCards)
 	 */
