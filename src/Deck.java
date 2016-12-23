@@ -3,7 +3,7 @@
  * All cards in the deck must match the affinity of its hero
  */
 public class Deck{
-	private Card[] cards;
+	private Card[] deckToPlay;
 	private String name;
 	private HERONAME hero;
 	private boolean fullDeck;
@@ -11,7 +11,8 @@ public class Deck{
 	
 	Deck()
 	{
-		cards = new Card[60];
+		deckToPlay     = new Card[60];
+		numCardsInDeck = 0;
 	}
 	
 	/*
@@ -20,12 +21,8 @@ public class Deck{
 	 * Return 1 if the deck is full
 	 * Return 2 if the card does not match the hero's affinity 
 	 */
-	public int addCardToDeck(Hero currentHero, EquipmentCard cardToAdd)
-	{
-		//Is the card active or passive?
-		//TODO: prossessing after we determined if the card is active
-		cardToAdd.isActive();
-		
+	public int addCardToDeck(Hero currentHero, Card cardToAdd)
+	{	
 		//Is the deck full?
 		if(fullDeck)
 			return 1;
@@ -43,12 +40,16 @@ public class Deck{
 		}
 		
 		// We can add the card to the deck now!
-		cards[numCardsInDeck] = cardToAdd;
-		numCardsInDeck++;
+		for(int i=0; i<=60; i++)
+		{
+			if(deckToPlay[i] == null)
+				continue;
+			
+			deckToPlay[i++] = cardToAdd;
+		}
 		
-		//Now is the deck full?
-		if (numCardsInDeck >= 60)
-			fullDeck = true;
+		//Now we can set the full deck to true
+		fullDeck = true;
 	
 		return 0;
 	}
@@ -59,11 +60,14 @@ public class Deck{
 	 * Return 0 on success 
 	 */
 	//TODO: This method will search an array to find which element to remove
-	public int removeCardFromDeck(Deck deck, EquipmentCard cardToRemove)
+	public int removeCardFromDeck(Deck deck, Card cardToRemove)
 	{
+		for(int i=0; i<=60; i++)
+		{
+			if(deckToPlay[i] == cardToRemove)
+				deckToPlay[i] = null;
+		}
 		
-		
-			
 		return 0;
 	}
 	
