@@ -10,8 +10,8 @@ public class Hero{
 	private ROLE role;
 	private int level;
 	private double cardScale;
-	private boolean completeActiveHand;
-	private boolean completePassiveHand;
+	private boolean fullHand;
+	private boolean emptyHand;
 	
 	// Offensive Stats
 	private double lc_BaseDmg;
@@ -38,8 +38,7 @@ public class Hero{
 	
 	private Deck deck;
 	private Card[] hand;
-	private int numActiveCardsInHand  = 0;
-	private int numPassiveCardsInHand = 0;
+	private int maxCardsInHand = 6;
 	
 	public Hero(HERONAME name){
 		affinity = Tools.getHeroAffinity(name);
@@ -48,62 +47,72 @@ public class Hero{
 	}
 	
 
-	// TODO: Do we want a separate active card/passive card method?
-
 	/*
-	 *  Add a Card to a Hero's Hand
+	 *  Add an Equipment Card to a Hero's Hand
 	 *  Return 0 on success
-	 *  Return 1 if active positions in hand are full
-	 *  Return 2 if passive positions in hand are full
-	 *  Reutrn 3 if the card cannot be added based on the affinity
+	 *  Return 1 if hand is full
 	 */
-	//TODO: We will need to add the card from the player's deck
-	public int addCardtoHand(Hero currentHero, Deck[] deck, EquipmentCard cardToAdd)
+	
+	public int addEquipmentCardToHand(EquipmentCard cardToAdd, int indexInHand)
 	{
-		//We need to get the deck
-		
-		//Are the active positions full?
-		if(completeActiveHand)
-		{
+		//Check if the hand is full
+		if(fullHand)
 			return 1;
-		}
 		
-		//Are the passive positions full?
-		if(completePassiveHand)
+		//Allowed to add the card to the hand now
+		for(int i=0; i<=maxCardsInHand; i++)
 		{
-			return 2;
+			if(hand[i] == null)
+				hand[i] = cardToAdd;
 		}
 		
+		if(indexInHand == maxCardsInHand)
+			fullHand = true;
 		
-		// We can add the card to the hero's hand now!
-		// Which slot does it go into?
+		return 0;
+	}
+	
+	
+	/*
+	 * Add an Upgrade Card to a Hero's hand
+	 * Return 0 on success
+	 * Return 1 when the hand is full
+	 */
+	
+	public int addUpgradeCardToHand(UpgradeCard cardToAdd, int indexInHand)
+	{
+		//Check if the hand is full
+		if(fullHand)
+			return 1;
 		
-		// Now, are the Active positions in the hand filled?
-		if (numActiveCardsInHand >= 4)
-			completeActiveHand = true;
-		
-		// What about the passive hand?
-		if (numPassiveCardsInHand >= 2)
-			completePassiveHand = true;
+		//Allowed to add the card to the hand now
+		for(int i=0; i<=maxCardsInHand; i++)
+		{
+			if(hand[i] == null)
+				hand[i] = cardToAdd;
+		}
+		if(indexInHand == maxCardsInHand)
+			fullHand = true;
 		
 		return 0;
 	}
 	
 	/*
-	 *  Remove a card from a Hero's Hand
+	 *  Remove a Card from a Hero's Hand
 	 *  Return 0 on success
-	 *  Return 1 if card can not be added based on stats of the card
+	 *  Return 1 if the hand is empty
 	 */
-	//TODO: We will have to remove this card from the Hand and add it back to
-	//The player's deck
-	public int removeCardFromHand(Hero currentHero, EquipmentCard cardToRemove)
+
+	//TODO: Do we really care about what card to remove? upgrade vs. equipment?
+	public int removeCardFromHand(int indexInHand)
 	{
-		currentHero.getHand();
+		//Is the Hand empty?
+		if(emptyHand)
+			return 1;
 		
-		//Will an active card or passive card be removed?
-		cardToRemove.isActive();
-	
-		
+		//We need to remove that certain index in the array
+		//TODO: Do we need to loop through our hand?
+		hand[indexInHand] = null;
 		
 		return 0;
 	}
