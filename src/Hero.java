@@ -38,7 +38,7 @@ public class Hero{
 	
 	private Deck deck;
 	private Card[] hand;
-	private int maxCardsInHand = 6;
+
 	
 	public Hero(HERONAME name){
 		affinity = Tools.getHeroAffinity(name);
@@ -50,50 +50,28 @@ public class Hero{
 	/*
 	 *  Add an Equipment Card to a Hero's Hand
 	 *  Return 0 on success
-	 *  Return 1 if hand is full
+	 *  Return 1 if the hand is full
+	 *  Return 2 if the index is 4 or 5 and the card is active
+	 *  Return 3 if the index is occupied
 	 */
 	
 	public int addEquipmentCardToHand(EquipmentCard cardToAdd, int indexInHand)
 	{
-		//Check if the hand is full
+		//Is the hand full
 		if(fullHand)
 			return 1;
 		
-		//Allowed to add the card to the hand now
-		for(int i=0; i<=maxCardsInHand; i++)
-		{
-			if(hand[i] == null)
-				hand[i] = cardToAdd;
-		}
+		// Active cards cannot be in index 4 or 5
+		if(indexInHand == 4 || indexInHand == 5 && cardToAdd.isActive())
+			return 2;
 		
-		if(indexInHand == maxCardsInHand)
-			fullHand = true;
+		// Is that index occupied?
+		if(hand[indexInHand] != null)
+			return 3;
 		
-		return 0;
-	}
-	
-	
-	/*
-	 * Add an Upgrade Card to a Hero's hand
-	 * Return 0 on success
-	 * Return 1 when the hand is full
-	 */
-	
-	public int addUpgradeCardToHand(UpgradeCard cardToAdd, int indexInHand)
-	{
-		//Check if the hand is full
-		if(fullHand)
-			return 1;
-		
-		//Allowed to add the card to the hand now
-		for(int i=0; i<=maxCardsInHand; i++)
-		{
-			if(hand[i] == null)
-				hand[i] = cardToAdd;
-		}
-		if(indexInHand == maxCardsInHand)
-			fullHand = true;
-		
+		//Allowed to add the card to the hand now at that particular index
+		hand[indexInHand] = cardToAdd;
+
 		return 0;
 	}
 	
@@ -111,7 +89,6 @@ public class Hero{
 			return 1;
 		
 		//We need to remove that certain index in the array
-		//TODO: Do we need to loop through our hand?
 		hand[indexInHand] = null;
 		
 		return 0;

@@ -9,10 +9,11 @@ public class Deck{
 	private boolean fullDeck;
 	private int numCardsInDeck;
 	
-	Deck()
+	Deck(HERONAME hero)
 	{
 		deckToPlay     = new Card[60];
 		numCardsInDeck = 0;
+		this.hero      = hero;
 	}
 	
 	/*
@@ -21,36 +22,28 @@ public class Deck{
 	 * Return 1 if the deck is full
 	 * Return 2 if the card does not match the hero's affinity 
 	 */
-	public int addCardToDeck(Hero currentHero, Card cardToAdd)
+	public int addCardToDeck(Card cardToAdd)
 	{	
 		//Is the deck full?
 		if(fullDeck)
 			return 1;
+
 		
 		//Does the card we want to add's affinity match the Hero's affinity
-		for(int i =0; i<currentHero.getAffinity().length; i++)
+		if(cardToAdd.getAffinity() != hero.getAffinity1() && cardToAdd.getAffinity() != hero.getAffinity2())
+			return 2;
+		
+		
+		//We can add the card to the deck now!
+		for(int i=0; i < numCardsInDeck; i++)
 		{
-			if(currentHero.getAffinity()[i] == cardToAdd.getAffinity())
-			{
-				break;
-			}
-			
-			if(i == currentHero.getAffinity().length - 1)
-				return 2;
+			deckToPlay[numCardsInDeck] = cardToAdd;
 		}
 		
-		// We can add the card to the deck now!
-		for(int i=0; i<=60; i++)
-		{
-			if(deckToPlay[i] == null)
-				continue;
-			
-			deckToPlay[i++] = cardToAdd;
-		}
-		
-		//Now we can set the full deck to true
-		fullDeck = true;
-	
+		// Now, is the deck full?
+		if (numCardsInDeck >= 60)
+			fullDeck = true;
+
 		return 0;
 	}
 	
@@ -58,14 +51,27 @@ public class Deck{
 	/*
 	 * Remove a card from the deck
 	 * Return 0 on success 
+	 * Retuen 1 if the deck is empty
 	 */
-	//TODO: This method will search an array to find which element to remove
-	public int removeCardFromDeck(Deck deck, Card cardToRemove)
+	//TODO: How to pass in the name of the card?
+	public int removeCardFromDeck(String nameOfCard)
 	{
-		for(int i=0; i<=60; i++)
+		
+		//Is the deck empty?
+		if(numCardsInDeck == 0)
+			return 1;
+		
+		// Remove the card
+		for(int i=0; i<numCardsInDeck; i++)
 		{
-			if(deckToPlay[i] == cardToRemove)
-				deckToPlay[i] = null;
+			if(deckToPlay[i].getName() == nameOfCard)
+			{
+				deckToPlay[i] = deckToPlay[numCardsInDeck - 1];
+				deckToPlay[numCardsInDeck - 1] = null;
+				i--;
+				break;
+			}
+			
 		}
 		
 		return 0;

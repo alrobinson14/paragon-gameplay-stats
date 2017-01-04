@@ -137,7 +137,7 @@ class EquipmentCard extends Card
 		numOfUpgradeCards++;
 		
 		// Now, is the Equipment card filled?
-		if (numOfUpgradeCards >= 2)
+		if (numOfUpgradeCards >= 3)
 			filled = true;
 
 		return 0;			
