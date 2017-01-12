@@ -30,14 +30,13 @@ class main{
 		CardReader cr = new CardReader();
 		Card[] myCards = cr.loadCards();
 		
-		
-		
 		for (int n = 0; n<1000; n++)
 		{
 			System.out.println(myCards[n].getName()+" "+myCards[n].getCost()+" "+myCards[n].getAffinity()+" "+((EquipmentCard) myCards[n]).getFillBonus()[0]);
 		}
 	}
 	
+
 	/*
 	 * This function calcualtes raw damage a Hero will be able to do to an enemy
 	 */

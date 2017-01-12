@@ -1,5 +1,5 @@
 /*
- * A class which can be applied to heroes and contains a maximum of 60 cards
+ * The Deck class can be applied to heroes and contains a maximum of 60 cards
  * All cards in the deck must match the affinity of its hero
  */
 public class Deck{
@@ -9,6 +9,7 @@ public class Deck{
 	private boolean fullDeck;
 	private int numCardsInDeck;
 	
+	// Deck constructor
 	Deck(HERONAME hero)
 	{
 		deckToPlay     = new Card[60];
@@ -53,7 +54,7 @@ public class Deck{
 	 * Return 0 on success 
 	 * Retuen 1 if the deck is empty
 	 */
-	//TODO: How to pass in the name of the card?
+
 	public int removeCardFromDeck(String nameOfCard)
 	{
 		

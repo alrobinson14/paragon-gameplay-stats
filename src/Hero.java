@@ -1,10 +1,9 @@
 /*
  * The Hero class contains all stats which belong to a hero
- * Majority of class will only require getters (no setters)
- * Will also need new constructor based on all input
+ * TODO: Will also need new constructor based on all input
  */
 public class Hero{
-	// rules
+	// Basic Rules
 	private HERONAME name;
 	private AFFINITY[] affinity;
 	private ROLE role;
@@ -36,14 +35,44 @@ public class Hero{
 	private double manaRegen;
 	private double healthRegen;
 	
+	// Cards and a Deck for the Hero
 	private Deck deck;
 	private Card[] hand;
 
-	
+	//TODO: This constructor will be useless. We want the constructor to be based on input
 	public Hero(HERONAME name){
 		affinity = Tools.getHeroAffinity(name);
 		role = Tools.getHeroRole(name);
 		cardScale = Tools.getHeroCardScale(role);		
+	}
+	
+	// This constructor will be able to deep copy a Hero for later use.
+	//TODO: Edit this
+	public Hero(Hero hero)
+	{
+		hero.getAbilityResist();
+		hero.getAffinity();
+		hero.getBasicResist();
+		hero.getCardScale();
+		hero.getDeck();
+		hero.getE_BaseDmg();
+		hero.getE_Cooldown();
+		hero.getHand();
+		hero.getHealth();
+		hero.gethealthRegen();
+		hero.getLc_BaseDmg();
+		hero.getLc_Cooldown();
+		hero.getLevel();
+		hero.getMana();
+		hero.getmanaRegen();
+		hero.getName();
+		hero.getQ_BaseDmg();
+		hero.getQ_Cooldown();
+		hero.getR_BaseDmg();
+		hero.getR_Cooldown();
+		hero.getRc_BaseDmg();
+		hero.getRc_Cooldown();
+		hero.getRole();
 	}
 	
 
@@ -80,8 +109,7 @@ public class Hero{
 	 *  Return 0 on success
 	 *  Return 1 if the hand is empty
 	 */
-
-	//TODO: Do we really care about what card to remove? upgrade vs. equipment?
+	
 	public int removeCardFromHand(int indexInHand)
 	{
 		//Is the Hand empty?
@@ -95,6 +123,7 @@ public class Hero{
 	}
 	
 	
+	// Getters to expose the Hero for later use
 	public HERONAME getName() {return name;}
 
 	public AFFINITY[] getAffinity() {return affinity;}
@@ -133,16 +162,18 @@ public class Hero{
 
 	public double getMana() {return mana;}
 
-	public double getMana_regen() {return manaRegen;}
+	public double getmanaRegen() {return manaRegen;}
 
-	public double getHealth_regen() {return healthRegen;}
+	public double gethealthRegen() {return healthRegen;}
 
 	public Deck getDeck() {return deck;}
 
+	// We want to set the deck inside a hero
 	public void setDeck(Deck deck) {this.deck = deck;}
 
 	public Card[] getHand() {return hand;}
 
+	// We will want to set the hand inside a hero
 	public void setHand(Card[] hand) {this.hand = hand;}
 
 	
