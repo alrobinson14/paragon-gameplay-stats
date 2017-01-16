@@ -79,7 +79,7 @@ class EquipmentCard extends Card
 	/*
 	 * getUpgrades()
 	 * 
-	 * This method allows us to get the upgrade cards into the upgrades array
+	 * Allows us to get the attributes of an equipment card for further processing
 	 * 
 	 */
 	

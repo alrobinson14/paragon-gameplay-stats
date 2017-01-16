@@ -6,15 +6,25 @@ public class Deck{
 	private Card[] deckToPlay;
 	private String name;
 	private HERONAME hero;
+	//Do we need to pass in the Hero Class, or just the Constant from the heroname?
+	private Hero heroClass;
 	private boolean fullDeck;
 	private int numCardsInDeck;
 	
-	// Deck constructor
+
 	Deck(HERONAME hero)
 	{
 		deckToPlay     = new Card[60];
 		numCardsInDeck = 0;
 		this.hero      = hero;
+	}
+	
+	// Deck constructor
+	Deck(Hero heroClass)
+	{
+		deckToPlay = new Card[60];
+		numCardsInDeck = 0;
+		this.heroClass = heroClass;
 	}
 	
 	/*
@@ -52,7 +62,7 @@ public class Deck{
 	/*
 	 * Remove a card from the deck
 	 * Return 0 on success 
-	 * Retuen 1 if the deck is empty
+	 * Return 1 if the deck is empty
 	 */
 
 	public int removeCardFromDeck(String nameOfCard)
