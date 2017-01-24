@@ -1,0 +1,204 @@
+Card,Cost,Affinity,Active,Slotted,Passive1,Passive2,Passive3,Passive4,Passive5,Passive6,Passive7,Passive8,Passive9,Passive10,Passive11,FillBonus1,FillBonus2,FillBonus3,Unique
+Barrier Token,1,Universal,FALSE,FALSE,ABILITY_RESIST,,,,,,,,,,,,,,
+Cast Token,1,Universal,FALSE,FALSE,POWER,,,,,,,,,,,,,,
+Guard Token,1,Universal,FALSE,FALSE,BASIC_RESIST,,,,,,,,,,,,,,
+Health Token,1,Universal,FALSE,FALSE,HEALTH,,,,,,,,,,,,,,
+Strike Token,1,Universal,FALSE,FALSE,POWER,,,,,,,,,,,,,,
+Flashfire Piston,2,Fury,FALSE,FALSE,ATTACK_SPEED,ATTACK_SPEED,,,,,,,,,,POWER,,,
+Hatespitter,2,Fury,FALSE,FALSE,ABILITY_PEN,MANA_REGEN,,,,,,,,,,MANA_REGEN,,,
+Madstone Gem,2,Fury,FALSE,FALSE,POWER,POWER,,,,,,,,,,ATTACK_SPEED,,,
+Rageheart Engine,2,Fury,FALSE,FALSE,BASIC_PEN,MANA_REGEN,,,,,,,,,,MANA_REGEN,,,
+Redeye Nitro,2,Fury,FALSE,FALSE,ATTACK_SPEED,CRIT_CHANCE,,,,,,,,,,ATTACK_SPEED,,,
+Adamant Edge,3,Universal,FALSE,TRUE,POWER,HEALTH,,,,,,,,,,POWER,POWER,,
+Amp Crystal,3,Intellect,FALSE,TRUE,POWER,MANA,,,,,,,,,,MANA,MANA,,
+Amulet of the Veteran,3,Universal,FALSE,TRUE,HEALTH,HEALTH,,,,,,,,,,HEALTH,POWER,,
+Berzerker Drive,3,Fury,FALSE,TRUE,POWER,MANA_REGEN,ATTACK_SPEED,,,,,,,,,ATTACK_SPEED,,,
+Brand of the Ironeater,3,Fury,FALSE,TRUE,CRIT_CHANCE,LIFESTEAL,LIFESTEAL,,,,,,,,,LIFESTEAL,,,
+Brightsteel Plate,3,Order,FALSE,TRUE,BASIC_RESIST,CRIT_CHANCE,CRIT_CHANCE,,,,,,,,,BASIC_RESIST,,,
+Burnblood Powder,3,Fury,FALSE,TRUE,POWER,MANA_REGEN,ATTACK_SPEED,,,,,,,,,MANA_REGEN,,,
+Burst-Engine,3,Intellect,FALSE,TRUE,POWER,MANA_REGEN,,,,,,,,,,POWER,POWER,,
+Celestine Diamond,3,Order,FALSE,TRUE,POWER,MANA_REGEN,MANA,,,,,,,,,MANA,,,
+Crystal Conduit,3,Intellect,FALSE,TRUE,ABILITY_PEN,MANA,,,,,,,,,,MANA,MANA,,
+Eldermage Amulet,3,Universal,FALSE,TRUE,POWER,HEALTH,,,,,,,,,,HEALTH,HEALTH,,
+Elysian Diamond,3,Order,FALSE,TRUE,POWER,MANA_REGEN,HEALTH,,,,,,,,,HEALTH,,,
+Fountain Spike,3,Universal,FALSE,TRUE,POWER,MANA,,,,,,,,,,POWER,MANA,,
+Fracturing Spike,3,Intellect,FALSE,TRUE,BASIC_PEN,MANA_REGEN,,,,,,,,,,POWER,POWER,,
+Genesis Torch,3,Order,FALSE,TRUE,BASIC_PEN,ABILITY_RESIST,MANA_REGEN,,,,,,,,,MANA_REGEN,,,
+Gift of the Rains,3,Growth,FALSE,TRUE,MANA_REGEN,HEALTH_REGEN,,,,,,,,,,HEALTH_REGEN,HEALTH_REGEN,,
+Golden Veil,3,Order,FALSE,TRUE,ABILITY_RESIST,CRIT_CHANCE,CRIT_CHANCE,,,,,,,,,ABILITY_RESIST,,,
+Hex of the Devastator,3,Corruption,FALSE,TRUE,ABILITY_PEN,CRIT_CHANCE,,,,,,,,,,CRIT_CHANCE,CRIT_CHANCE,,
+Impact Hammer,3,Fury,FALSE,TRUE,POWER,POWER,CRIT_CHANCE,,,,,,,,,CRIT_CHANCE,,,
+Lantern of Spring,3,Order,FALSE,TRUE,ABILITY_PEN,BASIC_RESIST,MANA_REGEN,,,,,,,,,MANA_REGEN,,,
+Magna-Lens,3,Intellect,FALSE,TRUE,ABILITY_PEN,MANA_REGEN,,,,,,,,,,POWER,POWER,,
+Micro-Nuke,3,Fury,FALSE,TRUE,POWER,POWER,CRIT_CHANCE,,,,,,,,,POWER,,,
+Muta-Gem,3,Intellect,FALSE,TRUE,POWER,MANA,,,,,,,,,,MANA_REGEN,,,
+Nirvana Stone,3,Order,FALSE,TRUE,CRIT_CHANCE,HEALTH_REGEN,MANA_REGEN,,,,,,,,,CRIT_CHANCE,,,
+Pendulum of Lords,3,Universal,FALSE,TRUE,MANA_REGEN,HEALTH,MANA_REGEN,,,,,,,,,MANA_REGEN,,,
+Quartzblade,3,Order,FALSE,TRUE,POWER,MANA_REGEN,HEALTH,,,,,,,,,POWER,POWER,,
+Reptilian Claw,3,Growth,FALSE,TRUE,HEALTH_REGEN,CRIT_CHANCE,,,,,,,,,,HEALTH_REGEN,HEALTH_REGEN,,
+Riftmagus Scepter,3,Universal,FALSE,TRUE,POWER,CRIT_CHANCE,,,,,,,,,,POWER,POWER,,
+Rust-Breaker,3,Fury,FALSE,TRUE,POWER,POWER,BASIC_PEN,,,,,,,,,POWER,,,
+Savage Remedy,3,Growth,FALSE,TRUE,MANA_REGEN,HEALTH_REGEN,,,,,,,,,,HEALTH_REGEN,HEALTH_REGEN,,
+Shadow Scroll,3,Corruption,FALSE,TRUE,POWER,ABILITY_PEN,,,,,,,,,,ABILITY_PEN,ABILITY_PEN,,
+Silverspear,3,Order,FALSE,TRUE,POWER,HEALTH_REGEN,MANA,,,,,,,,,POWER,,,
+Siphon Shard,3,Intellect,FALSE,TRUE,HEALTH_REGEN,LIFESTEAL,,,,,,,,,,LIFESTEAL,LIFESTEAL,,
+Snakevine Mesh,3,Growth,FALSE,TRUE,ABILITY_RESIST,POWER,,,,,,,,,,ABILITY_RESIST,ABILITY_RESIST,,
+Solaris Reactor,3,Intellect,FALSE,TRUE,POWER,MANA_REGEN,,,,,,,,,,MANA_REGEN,MANA_REGEN,,
+Spear of the Rifthunter,3,Universal,FALSE,TRUE,POWER,CRIT_CHANCE,,,,,,,,,,CRIT_CHANCE,CRIT_CHANCE,,
+Spiked Boneplate,3,Growth,FALSE,TRUE,BASIC_RESIST,POWER,,,,,,,,,,BASIC_RESIST,BASIC_RESIST,,
+Staff of Adamant,3,Universal,FALSE,TRUE,POWER,MANA,,,,,,,,,,POWER,POWER,,
+Steelcutter Gem,3,Intellect,FALSE,TRUE,BASIC_PEN,MANA,,,,,,,,,,MANA,MANA,,
+Tempered Plate,3,Universal,FALSE,TRUE,BASIC_RESIST,HEALTH,,,,,,,,,,BASIC_RESIST,BASIC_RESIST,,
+Thorned Greenweave,3,Growth,FALSE,TRUE,ABILITY_RESIST,POWER,,,,,,,,,,POWER,POWER,,
+Tuned Barrier,3,Universal,FALSE,TRUE,ABILITY_RESIST,HEALTH,,,,,,,,,,ABILITY_RESIST,ABILITY_RESIST,,
+Venom Shell,3,Growth,FALSE,TRUE,BASIC_RESIST,POWER,,,,,,,,,,POWER,POWER,,
+Viper Bolt,3,Corruption,FALSE,TRUE,BASIC_PEN,CRIT_CHANCE,,,,,,,,,,CRIT_CHANCE,CRIT_CHANCE,,
+Vital Tap,3,Intellect,FALSE,TRUE,HEALTH,LIFESTEAL,,,,,,,,,,HEALTH,HEALTH,,
+Voidsteel Dagger,3,Corruption,FALSE,TRUE,POWER,BASIC_PEN,,,,,,,,,,POWER,POWER,,
+Wellspring Staff,3,Universal,FALSE,TRUE,POWER,MANA,,,,,,,,,,MANA,MANA_REGEN,,
+Whirling Wand,3,Universal,FALSE,TRUE,POWER,ATTACK_SPEED,,,,,,,,,,ATTACK_SPEED,ATTACK_SPEED,,
+Windcarver Blade,3,Universal,FALSE,TRUE,POWER,ATTACK_SPEED,,,,,,,,,,POWER,POWER,,
+Curse of the Leech,4,Corruption,FALSE,TRUE,POWER,LIFESTEAL,,,,,,,,,,LIFESTEAL,LIFESTEAL,LIFESTEAL,
+Etherweave Mesh,4,Intellect,FALSE,TRUE,ABILITY_RESIST,MANA_REGEN,,,,,,,,,,MANA_REGEN,MANA_REGEN,MANA_REGEN,
+Quantum Casing,4,Intellect,FALSE,TRUE,BASIC_RESIST,MANA_REGEN,,,,,,,,,,MANA_REGEN,MANA_REGEN,BASIC_RESIST,
+Stonetooth Heart,4,Growth,FALSE,TRUE,HEALTH,BASIC_PEN,,,,,,,,,,HEALTH,HEALTH,HEALTH,
+Swiftcreek Heart,4,Growth,FALSE,TRUE,HEALTH,ATTACK_SPEED,,,,,,,,,,HEALTH,HEALTH,HEALTH,
+Thirstfang,4,Corruption,FALSE,TRUE,POWER,LIFESTEAL,LIFESTEAL,,,,,,,,,POWER,POWER,,
+Vineheart,4,Growth,FALSE,TRUE,HEALTH,ABILITY_PEN,,,,,,,,,,HEALTH,HEALTH,HEALTH,
+Chrono-Mancer Disc,5,Universal,FALSE,TRUE,MANA_REGEN,POWER,,,,,,,,,,COOLDOWN,,,TRUE
+Chrono-vore,5,Fury,FALSE,TRUE,ATTACK_SPEED,MANA_REGEN,,,,,,,,,,COOLDOWN,,,TRUE
+Chronospike,5,Universal,FALSE,TRUE,MANA,POWER,,,,,,,,,,COOLDOWN,,,TRUE
+Agoran Scepter,6,Universal,FALSE,TRUE,MANA,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Blade of Agora,6,Universal,FALSE,TRUE,POWER,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Blast Harness,6,Fury,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Deathnail,6,Corruption,FALSE,TRUE,BASIC_PEN,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Feral Stone,6,Growth,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Heart of the Apex,6,Growth,FALSE,TRUE,HEALTH,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Hunger-Maul,6,Fury,FALSE,TRUE,LIFESTEAL,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Seeds of the Flood,6,Growth,FALSE,TRUE,HEALTH_REGEN,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Sword of the Altar,6,Order,FALSE,TRUE,LIFESTEAL,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Wraith Whisper,6,Corruption,FALSE,TRUE,ABILITY_PEN,,,,,,,,,,,CRIT_BONUS,,,TRUE
+Blackblood Virus,7,Corruption,FALSE,TRUE,LIFESTEAL,LIFESTEAL,,,,,,,,,,CRIT_BONUS,,,TRUE
+Fist of Kings,10,Universal,FALSE,FALSE,BASIC_PEN,BASIC_PEN,BASIC_PEN,BASIC_PEN,BASIC_PEN,BASIC_PEN,BASIC_PEN,BASIC_PEN,HEALTH,HEALTH,HEALTH,,,,
+Hand of Prophets,10,Universal,FALSE,FALSE,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,ABILITY_PEN,HEALTH,HEALTH,HEALTH,,,,
+Touch of Thieves,10,Universal,FALSE,FALSE,LIFESTEAL,LIFESTEAL,LIFESTEAL,LIFESTEAL,LIFESTEAL,LIFESTEAL,LIFESTEAL,LIFESTEAL,HEALTH,HEALTH,HEALTH,,,,
+Armavore,3,Fury,FALSE,TRUE,ABILITY_PEN,,,,,,,,,,,,,,TRUE
+Backstabber,3,Corruption,FALSE,TRUE,CRIT_CHANCE,,,,,,,,,,,,,,TRUE
+Beastmaster's Scythe,3,Universal,FALSE,TRUE,HEALTH,ATTACK_SPEED,,,,,,,,,,HEALTH,,,TRUE
+Bone Dice,3,Fury,FALSE,TRUE,CRIT_CHANCE,,,,,,,,,,,,,,TRUE
+Brawler's Scythe,3,Universal,FALSE,TRUE,POWER,MANA,,,,,,,,,,POWER,,,TRUE
+Circlet of Health,3,Universal,FALSE,TRUE,MANA,,,,,,,,,,,,,,TRUE
+Circlet of Mana,3,Universal,FALSE,TRUE,HEALTH,,,,,,,,,,,,,,TRUE
+Combustion,3,Fury,FALSE,TRUE,MANA_REGEN,,,,,,,,,,,,,,TRUE
+Executioner's Scythe,3,Corruption,FALSE,TRUE,POWER,CRIT_CHANCE,,,,,,,,,,CRIT_CHANCE,,,TRUE
+Guardian's Scythe,3,Universal,FALSE,TRUE,POWER,HEALTH,,,,,,,,,,POWER,,,TRUE
+Hemorrhage,3,Fury,FALSE,TRUE,MANA_REGEN,,,,,,,,,,,,,,TRUE
+Hinder-Beast,3,Fury,FALSE,TRUE,HEALTH,,,,,,,,,,,,,,TRUE
+Irradiate,3,Fury,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,TRUE
+Killdozer Horn,3,Fury,FALSE,TRUE,MANA,,,,,,,,,,,,,,TRUE
+Lord's Siphon,3,Universal,FALSE,TRUE,MANA,HEALTH,MANA_REGEN,,,,,,,,,,,,TRUE
+Magus' Siphon,3,Universal,FALSE,TRUE,POWER,MANA,,,,,,,,,,POWER,,,TRUE
+Merciless,3,Fury,FALSE,TRUE,CRIT_CHANCE,ATTACK_SPEED,,,,,,,,,,,,,TRUE
+Mind Flow,3,Intellect,FALSE,TRUE,MANA,,,,,,,,,,,,,,TRUE
+Oasis Siphon,3,Growth,FALSE,TRUE,HEALTH_REGEN,LIFESTEAL,,,,,,,,,,HEALTH_REGEN,,,TRUE
+Offensive Maneuvers,3,Order,FALSE,TRUE,CRIT_CHANCE,CRIT_CHANCE,,,,,,,,,,,,,TRUE
+Power Chord,3,Fury,FALSE,TRUE,POWER,,,,,,,,,,,,,,TRUE
+Reaper's Siphon,3,Corruption,FALSE,TRUE,POWER,CRIT_CHANCE,,,,,,,,,,POWER,,,TRUE
+Sage's Siphon,3,Universal,FALSE,TRUE,POWER,HEALTH,,,,,,,,,,POWER,,,TRUE
+Stalker's Siphon,3,Corruption,FALSE,TRUE,LIFESTEAL,ATTACK_SPEED,,,,,,,,,,ATTACK_SPEED,,,TRUE
+Stinger Boost,3,Fury,FALSE,TRUE,MANA,,,,,,,,,,,,,,TRUE
+Ash of the Witch,4,Corruption,FALSE,TRUE,LIFESTEAL,ABILITY_PEN,,,,,,,,,,,,,TRUE
+Blight Bones,4,Growth,FALSE,TRUE,HEALTH,,,,,,,,,,,,,,TRUE
+Bud of the Changeling,4,Growth,FALSE,TRUE,HEALTH,MANA,,,,,,,,,,,,,TRUE
+Drink the Spirits,4,Corruption,FALSE,TRUE,HEALTH,MANA,,,,,,,,,,,,,TRUE
+Injured Rage,4,Fury,FALSE,TRUE,POWER,POWER,,,,,,,,,,,,,TRUE
+Lazarus Blade,4,Universal,FALSE,TRUE,HEALTH,,,,,,,,,,,,,,TRUE
+Marrow-Fangs,4,Corruption,FALSE,TRUE,LIFESTEAL,BASIC_PEN,,,,,,,,,,,,,TRUE
+Nanoplasm,4,Intellect,FALSE,TRUE,HEALTH,BASIC_RESIST,,,,,,,,,,,,,TRUE
+Quenching Scales,4,Growth,FALSE,TRUE,HEALTH_REGEN,MANA_REGEN,,,,,,,,,,,,,TRUE
+Ring of the Domina,4,Universal,FALSE,TRUE,HEALTH,MANA,,,,,,,,,,,,,TRUE
+Thermo-bond,4,Intellect,FALSE,TRUE,HEALTH,ABILITY_RESIST,,,,,,,,,,,,,TRUE
+Thickblood,4,Growth,FALSE,TRUE,HEALTH_REGEN,MANA_REGEN,,,,,,,,,,,,,TRUE
+Battle Mantra,5,Order,FALSE,TRUE,POWER,MANA_REGEN,,,,,,,,,,,,,TRUE
+Charging Brute,5,Growth,FALSE,TRUE,POWER,,,,,,,,,,,,,,TRUE
+Chieftain's Crown,5,Growth,FALSE,TRUE,HEALTH_REGEN,HEALTH,HEALTH,,,,,,,,,,,,TRUE
+Clearheart,5,Growth,FALSE,TRUE,MANA_REGEN,,,,,,,,,,,,,,TRUE
+Cup of the Vampire,5,Corruption,FALSE,TRUE,LIFESTEAL,LIFESTEAL,BASIC_PEN,,,,,,,,,,,,TRUE
+Font of Rapture,5,Order,FALSE,TRUE,HEALTH_REGEN,MANA_REGEN,CRIT_CHANCE,,,,,,,,,,,,TRUE
+Heartshot,5,Fury,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,TRUE
+Incessant Onslaught,5,Fury,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,TRUE
+Pain-Eater,5,Fury,FALSE,TRUE,HEALTH,,,,,,,,,,,,,,TRUE
+Satori Cloak,5,Order,FALSE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,TRUE
+Toxi-gel,5,Intellect,FALSE,TRUE,HEALTH,HEALTH,HEALTH_REGEN,,,,,,,,,,,,TRUE
+Bloodrite Brand,6,Fury,FALSE,TRUE,CRIT_CHANCE,LIFESTEAL,,,,,,,,,,,,,TRUE
+Bounty Stalker,6,Universal,FALSE,TRUE,POWER,HEALTH,,,,,,,,,,,,,TRUE
+Everglass,6,Order,FALSE,TRUE,MANA_REGEN,MANA_REGEN,,,,,,,,,,,,,TRUE
+Madspore Sash,6,Growth,FALSE,TRUE,HEALTH_REGEN,BASIC_RESIST,,,,,,,,,,,,,TRUE
+Necroveil,6,Corruption,FALSE,TRUE,ABILITY_PEN,POWER,,,,,,,,,,,,,TRUE
+Radiant Mantle,6,Order,FALSE,TRUE,HEALTH,MANA,,,,,,,,,,,,,TRUE
+Scarab Claws,6,Corruption,FALSE,TRUE,ATTACK_SPEED,MANA_REGEN,,,,,,,,,,,,,TRUE
+Infinity Stream,7,Intellect,FALSE,TRUE,MANA_REGEN,ABILITY_PEN,,,,,,,,,,,,,TRUE
+Traitor's Touch,7,Corruption,FALSE,TRUE,LIFESTEAL,MANA_REGEN,,,,,,,,,,,,,TRUE
+Hydroverser,8,Intellect,FALSE,TRUE,MANA_REGEN,HEALTH,,,,,,,,,,,,,TRUE
+Bump Juice,1,Fury,TRUE,FALSE,,,,,,,,,,,,,,,
+Chrono-Tonic,1,Intellect,TRUE,FALSE,,,,,,,,,,,,,,,
+Fiend Elixir,1,Corruption,TRUE,FALSE,,,,,,,,,,,,,,,
+Health Potion,1,Universal,TRUE,FALSE,,,,,,,,,,,,,,,
+Hunter's Drink,1,Growth,TRUE,FALSE,,,,,,,,,,,,,,,
+Jungle Drink,1,Growth,TRUE,FALSE,,,,,,,,,,,,,,,
+Mana Potion,1,Universal,TRUE,FALSE,,,,,,,,,,,,,,,
+Mender's Phial,1,Order,TRUE,FALSE,,,,,,,,,,,,,,,
+Scout's Ward,1,Universal,TRUE,FALSE,,,,,,,,,,,,,,,TRUE
+Shaman's Drink,1,Growth,TRUE,FALSE,,,,,,,,,,,,,,,
+Shepard's Phial,1,Order,TRUE,FALSE,,,,,,,,,,,,,,,
+Vampiric Elixir,1,Corruption,TRUE,FALSE,,,,,,,,,,,,,,,
+Zap Juice,1,Fury,TRUE,FALSE,,,,,,,,,,,,,,,
+Assassin's Ward,3,Corruption,TRUE,TRUE,POWER,BASIC_PEN,LIFESTEAL,,,,,,,,,,,,TRUE
+Bloodsoaked Armor,3,Corruption,TRUE,TRUE,BASIC_RESIST,ATTACK_SPEED,,,,,,,,,,,,,
+Brawler's Ward,3,Universal,TRUE,TRUE,POWER,MANA,,,,,,,,,,POWER,,,TRUE
+Guardian's Ward,3,Universal,TRUE,TRUE,POWER,HEALTH,,,,,,,,,,HEALTH,,,TRUE
+Lord's Ward,3,Universal,TRUE,TRUE,MANA,HEALTH,MANA_REGEN,,,,,,,,,,,,TRUE
+Magus' Ward,3,Universal,TRUE,TRUE,POWER,MANA,,,,,,,,,,MANA,,,TRUE
+Meltdown,3,Fury,TRUE,TRUE,POWER,POWER,ABILITY_PEN,,,,,,,,,POWER,,,
+Sage's Ward,3,Universal,TRUE,TRUE,POWER,HEALTH,,,,,,,,,,POWER,,,TRUE
+Scourging Tails,3,Corruption,TRUE,TRUE,POWER,,,,,,,,,,,,,,
+Seek and Destroy,3,Corruption,TRUE,TRUE,POWER,,,,,,,,,,,,,,
+Sorcerer's Ward,3,Corruption,TRUE,TRUE,POWER,ABILITY_PEN,LIFESTEAL,,,,,,,,,,,,TRUE
+Baneflesh,4,Corruption,TRUE,TRUE,CRIT_CHANCE,HEALTH,,,,,,,,,,,,,
+Crucial Snare,4,Intellect,TRUE,TRUE,MANA_REGEN,BASIC_PEN,,,,,,,,,,,,,
+Empyrean Mask,4,Order,TRUE,FALSE,,,,,,,,,,,,,,,TRUE
+Hunter's Guile,4,Growth,TRUE,TRUE,POWER,HEALTH,,,,,,,,,,,,,
+Reverberate,4,Fury,TRUE,TRUE,POWER,POWER,,,,,,,,,,,,,
+Silent Indignation,4,Growth,TRUE,TRUE,LIFESTEAL,,,,,,,,,,,,,,
+Blink Charm,5,Universal,TRUE,FALSE,,,,,,,,,,,,,,,TRUE
+Blinkshot,5,Fury,TRUE,TRUE,MANA_REGEN,,,,,,,,,,,,,,TRUE
+Dreadfeast Relic,5,Corruption,TRUE,TRUE,LIFESTEAL,LIFESTEAL,CRIT_CHANCE,,,,,,,,,,,,
+Firepiercer,5,Fury,TRUE,TRUE,MANA_REGEN,,,,,,,,,,,,,,
+Jewel of the Apostle,5,Order,TRUE,TRUE,MANA_REGEN,LIFESTEAL,,,,,,,,,,,,,
+Megavolt Pylon,5,Intellect,TRUE,TRUE,MANA,MANA,MANA_REGEN,,,,,,,,,,,,
+Mending Bloom,5,Growth,TRUE,TRUE,HEALTH_REGEN,,,,,,,,,,,,,,
+Overflowing Gifts,5,Growth,TRUE,TRUE,MANA_REGEN,,,,,,,,,,,,,,
+Portal Stone,5,Universal,TRUE,FALSE,,,,,,,,,,,,,,,TRUE
+Rally the Troops,5,Intellect,TRUE,TRUE,ATTACK_SPEED,MANA_REGEN,,,,,,,,,,,,,
+Rocket Spike,5,Fury,TRUE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,
+Stab Link,5,Corruption,TRUE,TRUE,HEALTH_REGEN,,,,,,,,,,,,,,TRUE
+Stone of Salvation,5,Order,TRUE,TRUE,MANA_REGEN,LIFESTEAL,,,,,,,,,,,,,
+Tainted Magick,5,Corruption,TRUE,TRUE,HEALTH_REGEN,MANA_REGEN,,,,,,,,,,,,,
+Thunder Cleaver,5,Universal,TRUE,TRUE,ATTACK_SPEED,,,,,,,,,,,,,,TRUE
+Wicked Stigma,5,Corruption,TRUE,TRUE,MANA_REGEN,HEALTH,,,,,,,,,,,,,
+Blood Catalyst,6,Intellect,TRUE,TRUE,MANA,HEALTH,,,,,,,,,,,,,
+Bubble Tap,6,Intellect,TRUE,TRUE,ABILITY_RESIST,LIFESTEAL,,,,,,,,,,,,,
+Cast Converter,6,Intellect,TRUE,TRUE,MANA,MANA_REGEN,,,,,,,,,,,,,
+Honor the Pure,6,Order,TRUE,TRUE,HEALTH,MANA,,,,,,,,,,,,,
+Nanodrive,6,Intellect,TRUE,TRUE,MANA,ABILITY_PEN,,,,,,,,,,,,,
+Plasma Channel,6,Intellect,TRUE,TRUE,MANA,MANA,,,,,,,,,,,,,
+Scorpion Plate,6,Growth,TRUE,TRUE,HEALTH,BASIC_RESIST,,,,,,,,,,,,,
+Shockwave,6,Intellect,TRUE,TRUE,MANA_REGEN,MANA_REGEN,,,,,,,,,,,,,
+Sirensong,6,Corruption,TRUE,TRUE,LIFESTEAL,LIFESTEAL,,,,,,,,,,,,,
+Splinterbark Vest,6,Growth,TRUE,TRUE,HEALTH,ABILITY_RESIST,,,,,,,,,,,,,
+Tele-Blink,6,Intellect,TRUE,TRUE,MANA_REGEN,,,,,,,,,,,,,,TRUE
+Tempus Pearl,6,Order,TRUE,TRUE,POWER,ABILITY_RESIST,,,,,,,,,,,,,
+Nature's Muse,7,Growth,TRUE,TRUE,HEALTH,MANA,,,,,,,,,,MANA_REGEN,,,
+Stasis Gem,7,Order,TRUE,TRUE,POWER,,,,,,,,,,,,,,
+Barrier of Will,8,Intellect,TRUE,TRUE,BASIC_RESIST,MANA,,,,,,,,,,,,,
+Purity Censer,8,Order,TRUE,TRUE,MANA,HEALTH,,,,,,,,,,,,,
