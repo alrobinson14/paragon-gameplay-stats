@@ -30,14 +30,13 @@ class main{
 		CardReader cr = new CardReader();
 		Card[] myCards = cr.loadCards();
 		
-		
-		
 		for (int n = 0; n<1000; n++)
 		{
 			System.out.println(myCards[n].getName()+" "+myCards[n].getCost()+" "+myCards[n].getAffinity()+" "+((EquipmentCard) myCards[n]).getFillBonus()[0]);
 		}
 	}
 	
+
 	/*
 	 * This function calcualtes raw damage a Hero will be able to do to an enemy
 	 */
@@ -103,7 +102,7 @@ class main{
 	public double getEffectiveDamage (Hero hero, double rawDmg, double pen) //we will put our parameters in here
 	{
 
-		double armor = hero.getBasic_resist();
+		double armor = hero.getBasicResist();
 		int level = hero.getLevel();
 		
 		//TODO: Similar to getRawDamage, need to cycle thru Hero's hand to calculate bonus resistance

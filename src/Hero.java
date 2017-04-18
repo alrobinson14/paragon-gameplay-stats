@@ -1,15 +1,16 @@
 /*
  * The Hero class contains all stats which belong to a hero
- * Majority of class will only require getters (no setters)
- * Will also need new constructor based on all input
+ * TODO: Will also need new constructor based on all input
  */
 public class Hero{
-	// rules
+	// Basic Rules
 	private HERONAME name;
 	private AFFINITY[] affinity;
 	private ROLE role;
 	private int level;
 	private double cardScale;
+	private boolean fullHand;
+	private boolean emptyHand;
 	
 	// Offensive Stats
 	private double lc_BaseDmg;
@@ -26,124 +27,154 @@ public class Hero{
 	
 	// Defensive Stats
 	private double health;
-	private double basic_resist;
-	private double ability_resist;
+	private double basicResist;
+	private double abilityResist;
 	
 	// Misc Stats
 	private double mana;
-	private double mana_regen;
-	private double health_regen;
+	private double manaRegen;
+	private double healthRegen;
 	
-
-	// TODO: Will also need addCard/removeCard/setActive/etc...
+	// Cards and a Deck for the Hero
 	private Deck deck;
 	private Card[] hand;
-	
+
+	//TODO: This constructor will be useless. We want the constructor to be based on input
 	public Hero(HERONAME name){
 		affinity = Tools.getHeroAffinity(name);
 		role = Tools.getHeroRole(name);
 		cardScale = Tools.getHeroCardScale(role);		
 	}
-
-	public HERONAME getName() {
-		return name;
+	
+	// This constructor will be able to deep copy a Hero for later use.
+	//TODO: Edit this
+	public Hero(Hero hero)
+	{
+		hero.getAbilityResist();
+		hero.getAffinity();
+		hero.getBasicResist();
+		hero.getCardScale();
+		hero.getDeck();
+		hero.getE_BaseDmg();
+		hero.getE_Cooldown();
+		hero.getHand();
+		hero.getHealth();
+		hero.gethealthRegen();
+		hero.getLc_BaseDmg();
+		hero.getLc_Cooldown();
+		hero.getLevel();
+		hero.getMana();
+		hero.getmanaRegen();
+		hero.getName();
+		hero.getQ_BaseDmg();
+		hero.getQ_Cooldown();
+		hero.getR_BaseDmg();
+		hero.getR_Cooldown();
+		hero.getRc_BaseDmg();
+		hero.getRc_Cooldown();
+		hero.getRole();
 	}
+	
 
-	public AFFINITY[] getAffinity() {
-		return affinity;
-	}
+	/*
+	 *  Add an Equipment Card to a Hero's Hand
+	 *  Return 0 on success
+	 *  Return 1 if the hand is full
+	 *  Return 2 if the index is 4 or 5 and the card is active
+	 *  Return 3 if the index is occupied
+	 */
+	
+	public int addEquipmentCardToHand(EquipmentCard cardToAdd, int indexInHand)
+	{
+		//Is the hand full
+		if(fullHand)
+			return 1;
+		
+		// Active cards cannot be in index 4 or 5
+		if(indexInHand == 4 || indexInHand == 5 && cardToAdd.isActive())
+			return 2;
+		
+		// Is that index occupied?
+		if(hand[indexInHand] != null)
+			return 3;
+		
+		//Allowed to add the card to the hand now at that particular index
+		hand[indexInHand] = cardToAdd;
 
-	public ROLE getRole() {
-		return role;
+		return 0;
 	}
+	
+	/*
+	 *  Remove a Card from a Hero's Hand
+	 *  Return 0 on success
+	 *  Return 1 if the hand is empty
+	 */
+	
+	public int removeCardFromHand(int indexInHand)
+	{
+		//Is the Hand empty?
+		if(emptyHand)
+			return 1;
+		
+		//We need to remove that certain index in the array
+		hand[indexInHand] = null;
+		
+		return 0;
+	}
+	
+	
+	// Getters to expose the Hero for later use
+	public HERONAME getName() {return name;}
 
-	public int getLevel() {
-		return level;
-	}
+	public AFFINITY[] getAffinity() {return affinity;}
 
-	public double getCardScale() {
-		return cardScale;
-	}
+	public ROLE getRole() {return role;}
 
-	public double getLc_BaseDmg() {
-		return lc_BaseDmg;
-	}
+	public int getLevel() {return level;}
 
-	public double getQ_BaseDmg() {
-		return q_BaseDmg;
-	}
+	public double getCardScale() {return cardScale;}
 
-	public double getE_BaseDmg() {
-		return e_BaseDmg;
-	}
+	public double getLc_BaseDmg() {return lc_BaseDmg;}
 
-	public double getR_BaseDmg() {
-		return r_BaseDmg;
-	}
+	public double getQ_BaseDmg() {return q_BaseDmg;}
 
-	public double getRc_BaseDmg() {
-		return rc_BaseDmg;
-	}
+	public double getE_BaseDmg() {return e_BaseDmg;}
 
-	public double getLc_Cooldown() {
-		return lc_Cooldown;
-	}
+	public double getR_BaseDmg() {return r_BaseDmg;}
 
-	public double getQ_Cooldown() {
-		return q_Cooldown;
-	}
+	public double getRc_BaseDmg() {return rc_BaseDmg;}
 
-	public double getE_Cooldown() {
-		return e_Cooldown;
-	}
+	public double getLc_Cooldown() {return lc_Cooldown;}
 
-	public double getR_Cooldown() {
-		return r_Cooldown;
-	}
+	public double getQ_Cooldown() {return q_Cooldown;}
 
-	public double getRc_Cooldown() {
-		return rc_Cooldown;
-	}
+	public double getE_Cooldown() {return e_Cooldown;}
 
-	public double getHealth() {
-		return health;
-	}
+	public double getR_Cooldown() {return r_Cooldown;}
 
-	public double getBasic_resist() {
-		return basic_resist;
-	}
+	public double getRc_Cooldown() {return rc_Cooldown;}
 
-	public double getAbility_resist() {
-		return ability_resist;
-	}
+	public double getHealth() {return health;}
 
-	public double getMana() {
-		return mana;
-	}
+	public double getBasicResist() {return basicResist;}
 
-	public double getMana_regen() {
-		return mana_regen;
-	}
+	public double getAbilityResist() {return abilityResist;}
 
-	public double getHealth_regen() {
-		return health_regen;
-	}
+	public double getMana() {return mana;}
 
-	public Deck getDeck() {
-		return deck;
-	}
+	public double getmanaRegen() {return manaRegen;}
 
-	public void setDeck(Deck deck) {
-		this.deck = deck;
-	}
+	public double gethealthRegen() {return healthRegen;}
 
-	public Card[] getHand() {
-		return hand;
-	}
+	public Deck getDeck() {return deck;}
 
-	public void setHand(Card[] hand) {
-		this.hand = hand;
-	}
+	// We want to set the deck inside a hero
+	public void setDeck(Deck deck) {this.deck = deck;}
+
+	public Card[] getHand() {return hand;}
+
+	// We will want to set the hand inside a hero
+	public void setHand(Card[] hand) {this.hand = hand;}
 
 	
 }
