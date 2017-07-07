@@ -1,13 +1,3 @@
-package heroBuilder;
-
-import res.CONSTANTS.HERONAME;
-import res.CONSTANTS.AFFINITY;
-import res.Tools;
-
-import deckBuilder.Deck;
-import deckBuilder.Card;
-import deckBuilder.EquipmentCard;
-
 /*
  * The Hero class contains all stats which belong to a hero
  * TODO: Will also need new constructor based on all input
@@ -16,6 +6,7 @@ public class Hero{
 	// Basic Rules
 	private HERONAME name;
 	private AFFINITY[] affinity;
+	private ROLE role;
 	private int level;
 	private double cardScale;
 	private boolean fullHand;
@@ -51,6 +42,8 @@ public class Hero{
 	//TODO: This constructor will be useless. We want the constructor to be based on input
 	public Hero(HERONAME name){
 		affinity = Tools.getHeroAffinity(name);
+		role = Tools.getHeroRole(name);
+		cardScale = Tools.getHeroCardScale(role);		
 	}
 	
 	// This constructor will be able to deep copy a Hero for later use.
@@ -79,6 +72,7 @@ public class Hero{
 		hero.getR_Cooldown();
 		hero.getRc_BaseDmg();
 		hero.getRc_Cooldown();
+		hero.getRole();
 	}
 	
 
@@ -133,6 +127,8 @@ public class Hero{
 	public HERONAME getName() {return name;}
 
 	public AFFINITY[] getAffinity() {return affinity;}
+
+	public ROLE getRole() {return role;}
 
 	public int getLevel() {return level;}
 

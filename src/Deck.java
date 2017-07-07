@@ -1,6 +1,3 @@
-package deckBuilder;
-import res.CONSTANTS.HERONAME;
-
 /*
  * The Deck class can be applied to heroes and contains a maximum of 60 cards
  * All cards in the deck must match the affinity of its hero
@@ -8,7 +5,9 @@ import res.CONSTANTS.HERONAME;
 public class Deck{
 	private Card[] deckToPlay;
 	private String name;
-	private HERONAME heroName;
+	private HERONAME hero;
+	//Do we need to pass in the Hero Class, or just the Constant from the heroname?
+	private Hero heroClass;
 	private boolean fullDeck;
 	private int numCardsInDeck;
 	
@@ -17,7 +16,15 @@ public class Deck{
 	{
 		deckToPlay     = new Card[60];
 		numCardsInDeck = 0;
-		heroName       = hero;
+		this.hero      = hero;
+	}
+	
+	// Deck constructor
+	Deck(Hero heroClass)
+	{
+		deckToPlay = new Card[60];
+		numCardsInDeck = 0;
+		this.heroClass = heroClass;
 	}
 	
 	/*
@@ -34,7 +41,7 @@ public class Deck{
 
 		
 		//Does the card we want to add's affinity match the Hero's affinity
-		if(cardToAdd.getAffinity() != heroName.getAffinity1() && cardToAdd.getAffinity() != heroName.getAffinity2())
+		if(cardToAdd.getAffinity() != hero.getAffinity1() && cardToAdd.getAffinity() != hero.getAffinity2())
 			return 2;
 		
 		
