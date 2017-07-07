@@ -1,4 +1,13 @@
+package main;
+import deckBuilder.CardReader;
 
+import java.util.ArrayList;
+
+import deckBuilder.Card;
+import deckBuilder.UpgradeCard;
+import deckBuilder.EquipmentCard;
+import heroBuilder.Hero;
+import res.CONSTANTS.UPGRADE;
 
 /*
  * Start the JVM and run Paragon_Calc.java on it by calling the following
@@ -25,15 +34,9 @@ class main{
 	}
 	
 	public void doStuff(){
-
 		
 		CardReader cr = new CardReader();
-		Card[] myCards = cr.loadCards();
-		
-		for (int n = 0; n<1000; n++)
-		{
-			System.out.println(myCards[n].getName()+" "+myCards[n].getCost()+" "+myCards[n].getAffinity()+" "+((EquipmentCard) myCards[n]).getFillBonus()[0]);
-		}
+		ArrayList<Card> myCards = cr.loadCards();
 	}
 	
 

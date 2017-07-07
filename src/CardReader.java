@@ -1,3 +1,4 @@
+package deckBuilder;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -7,104 +8,80 @@ import java.util.ArrayList;
 
 public class CardReader 
 {
-	public Card[] loadCards() 
+	public ArrayList<Card> loadCards() 
 	{
-		Card[] allCards           = new Card[300];
-		int cardCount             = 0;
+		ArrayList<Card> allCards = new ArrayList<Card>();
 		BufferedReader cardReader = null;
 		
 		try 
 		{
-
-			String currLine;
-			
-			// UPGRADE CARD READER
 			cardReader = new BufferedReader(new FileReader("C:\\Temp\\Upgrades.csv"));
-			
 			// Eats first line.
-			cardReader.readLine();
-			/*
-			while ((currLine = cardReader.readLine()) != null) 
-			{				
-				String[] splitData = currLine.split(",");
-				allCards[cardCount] = new UpgradeCard(splitData[0], Integer.parseInt((splitData[1])), AFFINITY.valueOf(splitData[2]), UPGRADE.valueOf(splitData[3]));
-				
-				cardCount++;
-				//System.out.println("Raw CSV data: " + allCards[cardCount] + "\n");
+			String currLine = cardReader.readLine();	
+			
+			while ((currLine = cardReader.readLine())!=null) 
+			{	
+			String[] splitData = currLine.split(",");
+			allCards.add(new UpgradeCard(splitData[0], splitData[1], splitData[2], splitData[3]));
 			}
-			*/
-			
-			cardReader.close();
-			
-			// EQUIPMENT CARD READER
-			
-			cardReader = new BufferedReader(new FileReader("C:\\Temp\\Equipment.csv"));
-			
-			// Eats first line 
-			cardReader.readLine();
-			
-			while ((currLine = cardReader.readLine()) != null) 
-			{				
-				String[] splitData = currLine.split(",");
-				
-				// Determine the passives array
-				int passiveCount   = 0;
-				
-				if (splitData[5].equals("")) passiveCount = 0;
-				else if (splitData[6].equals("")) passiveCount = 1;
-				else if (splitData[7].equals("")) passiveCount = 2;
-				else if (splitData[8].equals("")) passiveCount = 3;
-				else passiveCount = 4;
-				
-				UPGRADE[] passives = new UPGRADE[passiveCount];
-				
-				for (int n=5, m=0; m<passiveCount; n++, m++)
-				{
-					passives[m] = UPGRADE.valueOf(splitData[n]);
-				}
-				
-				
-				// Determining the fill bonus array
-				int fillBonusCount = 0;
-				
-				if (splitData[9].equals("")) fillBonusCount = 0;
-				else if (splitData[10].equals("")) fillBonusCount = 1;
-				else fillBonusCount = 2;
-
-				UPGRADE[] fillBonus = new UPGRADE[fillBonusCount];
-				
-				for (int n=9, m=0; m<fillBonusCount; n++, m++)
-				{
-					fillBonus[m] = UPGRADE.valueOf(splitData[n]);
-				}
-				
-				allCards[cardCount] = new EquipmentCard(splitData[0], Integer.parseInt((splitData[1])), AFFINITY.valueOf(splitData[2]), Boolean.valueOf(splitData[3]), Boolean.valueOf(splitData[4]), passives, fillBonus);	
-				
-				cardCount++;
-			}
-			
-			cardReader.close();
-		} 
+			cardReader.close();		
+		}
 		
 		catch (IOException e) 
 		{
 			e.printStackTrace();
 		} 
 		
-		finally 
+		
+		
+		try 
 		{
-			try 
+			cardReader = new BufferedReader(new FileReader("C:\\Temp\\Equipment.csv"));
+			// Eats first line.
+			String currLine = cardReader.readLine();	
+			
+			while ((currLine = cardReader.readLine())!=null) 
+			{	
+			String[] splitData = currLine.split(",");
+			//Name
+			String name = splitData[0].substring(1, splitData[0].length()-1);
+			String cost = splitData[1].substring(1, splitData[1].length()-1);
+			String affinity = splitData[2].substring(1, splitData[2].length()-1);
+			String active = splitData[3].substring(1, splitData[3].length()-1);
+			String slotted = splitData[4].substring(1, splitData[4].length()-1);
+			ArrayList<String> upgrades = new ArrayList<>();
+			ArrayList<String> fillBonus = new ArrayList<>();
+			
+			
+			for (int n = 5; n<16; n++)
 			{
-				if (cardReader != null)
+				if ("\"\"".equals(splitData[n]))
+					continue;
+				else
 				{
-					cardReader.close();
+					upgrades.add(splitData[n].substring(1, splitData[n].length()-1));
 				}
-			} 
-			catch (IOException e) 
-			{
-				e.printStackTrace();
 			}
+			
+			for (int n = 16; n<18; n++)
+			{
+				if ("\"\"".equals(splitData[n]))
+					continue;
+				else
+					fillBonus.add(splitData[n].substring(1, splitData[n].length()-1));
+			}
+
+			String unique = splitData[19].substring(1,  splitData[19].length()-1);
+						
+			allCards.add(new EquipmentCard(name, cost, affinity, active, slotted, upgrades, fillBonus, unique));
+			}
+			cardReader.close();		
 		}
+		
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		} 
 		
 		return allCards;
 	}	

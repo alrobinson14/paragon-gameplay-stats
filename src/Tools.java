@@ -1,11 +1,15 @@
-final class Tools{
+package res;
+import res.CONSTANTS.AFFINITY;
+import res.CONSTANTS.HERONAME;
+
+public final class Tools{
 	
 	private Tools(){};
 	
 	/*
 	 * Temp function until Hero loader is completed
 	 */
-	static AFFINITY[] getHeroAffinity(HERONAME name)
+	public static AFFINITY[] getHeroAffinity(HERONAME name)
 	{
 		AFFINITY[] myAffinities = new AFFINITY[2];
 		
@@ -114,56 +118,5 @@ final class Tools{
 		}		
 		
 		return myAffinities;
-	}
-	
-	/*
-	 * Temp function until Hero loader is completed
-	 */
-	static ROLE getHeroRole(HERONAME name)
-	{
-		if (name == HERONAME.CRUNCH || name == HERONAME.KWANG || name == HERONAME.GREYSTONE ||
-			name == HERONAME.KHAIMERA|| name == HERONAME.FENGMAO || name == HERONAME.GRUX)
-			return ROLE.FIGHTER;
-		
-		else if (name == HERONAME.COUNTESS || name == HERONAME.KALLARI)
-			return ROLE.ASSASSIN;
-		
-		else if (name == HERONAME.LTBELICA || name == HERONAME.IGGYSCORCH || name == HERONAME.HOWITZER ||
-				 name == HERONAME.GADGET || name == HERONAME.GIDEON)
-			return ROLE.CASTER;
-		
-		else if (name == HERONAME.NARBASH || name == HERONAME.RIKTOR || name == HERONAME.SEVAROG ||
-				 name == HERONAME.STEEL || name == HERONAME.RAMPAGE)
-			return ROLE.TANK;
-		
-		else if (name == HERONAME.THEFEY || name == HERONAME.DEKKER || name == HERONAME.MURIEL)
-			return ROLE.SUPPORT;
-		
-		else if (name == HERONAME.GRIMEXE || name == HERONAME.TWINBLAST || name == HERONAME.MURDOCK ||
-				 name == HERONAME.SPARROW)
-			return ROLE.RANGER;
-		
-		else return ROLE.RANGER;
-	}
-	
-	/*
-	 * Temp function until Hero loader is completed
-	 */
-	static double getHeroCardScale(ROLE role)
-	{
-		if (role == ROLE.ASSASSIN)
-			return 0.8;
-		else if (role == ROLE.CASTER)
-			return 0.4;
-		else if (role == ROLE.FIGHTER)
-			return 0.8;
-		else if (role == ROLE.RANGER)
-			return 1.0;
-		else if (role == ROLE.SUPPORT)
-			return 0.4;
-		else if (role == ROLE.TANK)
-			return 0.8;
-		
-		return 0.0;
 	}
 }

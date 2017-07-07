@@ -1,5 +1,8 @@
+package res;
 
-enum HERONAME{
+public final class CONSTANTS{
+
+public enum HERONAME{
 	CRUNCH(AFFINITY.FURY, AFFINITY.ORDER),
 	COUNTESS(AFFINITY.GROWTH, AFFINITY.CORRUPTION),
 	KWANG(AFFINITY.ORDER, AFFINITY.CORRUPTION),
@@ -40,17 +43,7 @@ enum HERONAME{
 	
 }
 
-enum ROLE{
-	FIGHTER,
-	ASSASSIN,
-	CASTER,
-	TANK,
-	SUPPORT,
-	RANGER
-}
-
-
-enum AFFINITY{
+public enum AFFINITY{
 	UNIVERSAL,
 	FURY,
 	INTELLECT,
@@ -60,7 +53,7 @@ enum AFFINITY{
 }
 
 
-enum UPGRADE{	
+public enum UPGRADE{	
 	HEALTH(50),
 	HEALTH_REGEN(1.4),
 	MANA(75),
@@ -84,10 +77,11 @@ enum UPGRADE{
 	
 }
 
-enum ATTACK{
+public enum ATTACK{
 	LC,
 	Q,
 	E,
 	R,
 	RC
+}
 }
